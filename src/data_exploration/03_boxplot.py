@@ -14,13 +14,13 @@ def main():
 
     for index, (ft_name, ft_values) in enumerate(df.items()):
         ax: Axes = axs[index]
-        ax.hist(ft_values, bins=100)
+        ax.boxplot(ft_values)
         ax.set_title(ft_name)
 
     fig.set_layout_engine('tight')
     fig.set_size_inches((60, 30))
-    plt.savefig('hist.pdf')
+    plt.savefig('boxplot.pdf')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
