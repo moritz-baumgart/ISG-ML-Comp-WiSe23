@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 
-from load import get_train_data
+from load import get_class_train_data
 
 
 def main():
-    df = get_train_data()
+    df = get_class_train_data()
     df.drop(columns='Id', inplace=True)
 
     fig, axs = plt.subplots(4, 8)

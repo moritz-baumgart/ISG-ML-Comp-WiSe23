@@ -1,8 +1,8 @@
-from load import get_train_data
+from load import get_class_train_data
 import pandas as pd
 
 def main():
-    df = get_train_data()
+    df = get_class_train_data()
     
     pd.options.display.max_columns = None
 
