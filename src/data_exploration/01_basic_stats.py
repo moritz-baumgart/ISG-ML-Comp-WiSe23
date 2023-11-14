@@ -1,9 +1,17 @@
-from load import get_class_train_data
+from load import get_class_train_data, get_reg_train_data
 import pandas as pd
 
 def main():
-    df = get_class_train_data()
+    class_df = get_class_train_data()
+    print('####################\nClassification Task:\n####################')
+    do_basic_stats(class_df)
+
+    reg_df = get_reg_train_data()
+    print('################\nRegression Task:\n################')
+    do_basic_stats(reg_df)
     
+
+def do_basic_stats(df: pd.DataFrame):
     pd.options.display.max_columns = None
 
     print('Pandas describe:')
@@ -18,17 +26,21 @@ def main():
 
     wait()
 
+    # Remove the id for duplicate check, since it is unique in every row
+    df_no_id = df.drop(columns='Id')
     print('Number of duplicate rows/instances:')
-    print(df.duplicated().sum())
+    print(df_no_id.duplicated().sum())
 
-    print('Number of duplicate columns/features:')
-    print(df.T.duplicated().sum())
+    # I removed the following for now, since I dont know how much sense it makes
+    #print('Number of duplicate columns/features:')
+    #print(df.T.duplicated().sum())
 
     wait()
 
     print('Number of missing/NaN values:')
     print(df.isna().sum())
 
+    wait()
 
 
 def wait():

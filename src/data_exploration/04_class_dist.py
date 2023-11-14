@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib.axes import Axes
 
 from load import get_class_train_data
+from util import make_diagram_foreach
 
 
 def main():
@@ -9,17 +10,12 @@ def main():
 
     df = df[['feature_10', 'feature_12', 'feature_20', 'label']]
 
-    fig, axs = plt.subplots(1, 4)
-
-    for index, (ft_name, ft_values) in enumerate(df.items()):
-        ax: Axes = axs[index]
+    def make(index, ft_name, ft_values, ax):
         categories = ft_values.value_counts()
-        print(categories)
         ax.bar(categories.index.map(lambda x: str(x)), categories.values)
         ax.set_title(ft_name)
 
-    plt.show()
-
+    make_diagram_foreach(1, 4, df, None, None, make)
 
 
 if __name__ == '__main__':
