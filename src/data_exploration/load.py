@@ -8,7 +8,7 @@ def get_train_data(ft_file: str, label_file: str, label_name: str, split_label=F
     df = pd.merge(train_ft, train_label, on='Id', how='inner')
 
     if split_label:
-        X = df.drop(columns=['Id', 'label'])
+        X = df.drop(columns=['Id', label_name])
         y = df[label_name]
 
         return X, y

@@ -1,6 +1,3 @@
-import matplotlib.pyplot as plt
-from matplotlib.axes import Axes
-
 from load import get_class_train_data
 from util import make_diagram_foreach
 

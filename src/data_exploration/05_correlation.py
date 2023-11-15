@@ -1,5 +1,4 @@
 import seaborn as sns
-import matplotlib.pyplot as plt
 import numpy as np
 
 from load import get_class_train_data
