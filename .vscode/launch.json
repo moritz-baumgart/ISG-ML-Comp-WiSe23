@@ -5,13 +5,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Data Exploration: Current File",
+            "name": "Data Exploration CWD: Current File",
             "type": "python",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "justMyCode": true,
+            "justMyCode": false,
              "cwd": "${workspaceFolder}/src/data_exploration"
+        },
+        {
+            "name": "Model Building CWD: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+             "cwd": "${workspaceFolder}/src/model_building/lfm/"
         }
     ]
 }

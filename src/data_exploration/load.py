@@ -29,7 +29,7 @@ def get_all_ft_data(train_ft_file: str, test_ft_file: str, train_test_split=Fals
     if train_test_split:
         return train_ft, test_ft
     else:
-        pd.concat([train_ft, test_ft])
+        return pd.concat([train_ft, test_ft])
 
 def get_all_class_ft_data(train_test_split=False):
     return get_all_ft_data('../data/classification/train_features.csv', '../data/classification/test_features.csv', train_test_split)
