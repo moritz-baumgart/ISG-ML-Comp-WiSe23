@@ -1,13 +1,10 @@
 import pandas as pd
-from sklearn.base import BaseEstimator, ClassifierMixin
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import IsolationForest
 from sklearn.decomposition import PCA
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import f1_score
-import numpy as np
 
 from load import get_class_train_data
 

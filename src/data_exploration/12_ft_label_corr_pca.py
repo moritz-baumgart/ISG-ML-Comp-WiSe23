@@ -23,7 +23,7 @@ def do(remove_ft_name: str):
     scaler = StandardScaler()
     scaled_df = pd.DataFrame(scaler.fit_transform(X_df), columns=X_df.columns)
 
-    pca = PCA(n_components=3)
+    pca = PCA(n_components=5)
     pca_res = pd.DataFrame(pca.fit_transform(scaled_df))
 
     df = pd.merge(pca_res, y_df, left_index=True, right_index=True)
@@ -36,6 +36,8 @@ def do(remove_ft_name: str):
 
 def main():
 
+    do(f'feature_{2}')
+    return
     for i in range(31):
         do(f'feature_{i}')
 

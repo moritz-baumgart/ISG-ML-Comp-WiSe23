@@ -33,6 +33,9 @@ def main():
     ax1.bar(np.arange(pca.n_components_), pca.explained_variance_ratio_)
 
     ax2.scatter(pca_res[:, 0], pca_res[:, 1], pca_res[:, 2], c=y_df)
+    ax2.set_xlabel('PC1')
+    ax2.set_ylabel('PC2')
+    ax2.set_zlabel('PC3')
 
     plt.show()
 
