@@ -4,14 +4,18 @@ import joblib
 from lightfm import LightFM
 from lightfm.data import Dataset
 
+###############################
+FILENAME = 'lfm-user_noskip_gt18_nosplit.joblib'
+###############################
+
 def main():
     df = pd.read_csv('../../data/regression/test_features.csv')
 
-    dataset: Dataset = joblib.load('ds_lfm-user_noskip_gt18_nosplit.joblib')
+    dataset: Dataset = joblib.load('ds_' + FILENAME)
     user_map = dataset.mapping()[0]
     item_map = dataset.mapping()[2]
 
-    lfm: LightFM = joblib.load('lfm-user_noskip_gt18_nosplit.joblib')
+    lfm: LightFM = joblib.load(FILENAME)
 
     pred = np.array([])
 
@@ -25,7 +29,8 @@ def main():
         else:
             pred = np.append(pred, 4)
 
-    pred_rounded = np.round(pred)
+    #pred_rounded = np.round(pred)
+    pred_rounded = np.ceil(pred)
     pred_df = pd.DataFrame(pred_rounded, columns=['Predicted'])
 
     print(pred_df.value_counts())

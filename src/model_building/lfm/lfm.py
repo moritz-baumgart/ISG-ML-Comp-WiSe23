@@ -8,6 +8,9 @@ from lightfm.data import Dataset
 import joblib
 from pprint import pprint
 
+###############################
+FILENAME = 'lfm-user_noskip_gt18_nosplit.joblib'
+###############################
 
 def main():
 
@@ -26,7 +29,7 @@ def main():
     dataset = Dataset()
     dataset.fit(df['user'], df['item'])
 
-    #joblib.dump(dataset, 'ds_lfm-user_noskip_gt18_nosplit.joblib')
+    joblib.dump(dataset, 'ds_' + FILENAME)
 
     user_item_tuples = [(row['user'], row['item']) for index, row in df.iterrows()]
     (interactions, weights) = dataset.build_interactions(user_item_tuples)
@@ -36,6 +39,7 @@ def main():
 
     scores = {}
 
+    '''
     for n_comp in range(1, 31):
         lfm = LightFM(no_components=n_comp, learning_schedule='adadelta')
         lfm.fit(train, num_threads=8)
@@ -44,8 +48,13 @@ def main():
         score = auc_score(lfm, test).mean()
         print(score)
         scores[n_comp] = score
+    '''
+    lfm = LightFM()#no_components=18, learning_schedule='adadelta')
+    lfm.fit(train, num_threads=8)
+    score = auc_score(lfm, test).mean()
+    print(score)
     
-    joblib.dump(scores, 'adadelta_1-30_score.joblib')
+    joblib.dump(lfm, FILENAME)
 
 
 if __name__ == '__main__':
