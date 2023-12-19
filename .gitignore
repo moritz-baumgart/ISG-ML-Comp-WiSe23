@@ -1,6 +1,6 @@
 # Ignore binary files with models for now
 # only commit model_doc.md, which contains parameters to build the models
-*.joblib
+#*.joblib
 
 
 
