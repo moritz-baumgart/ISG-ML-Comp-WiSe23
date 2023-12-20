@@ -13,6 +13,7 @@ class DetectionMethod(Enum):
 
 class HandlingMethod(Enum):
     REMOVE = 0
+    CAP_AT_MIN_MAX = 1
 
 
 def remove_outliers(
@@ -28,6 +29,16 @@ def remove_outliers(
 
     if handling_method == HandlingMethod.REMOVE:
         return df[mask == 1]
+    elif handling_method == HandlingMethod.CAP_AT_MIN_MAX:
+        df_without_outliers = df[mask == 1]
+        df_result = df.copy()
+        for c in df.columns:
+            cap_min = df_without_outliers[c].min()
+            cap_max = df_without_outliers[c].max()
+            clipped = df[c].clip(lower=cap_min, upper=cap_max)
+            df_result[c].loc[mask == -1] = clipped 
+
+        return df_result
     else:
         raise ValueError("Unknown HandlingMethod")
 
