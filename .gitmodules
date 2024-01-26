@@ -1,0 +1,3 @@
+[submodule "lib"]
+	path = lib
+	url = git@github.com:moritz-baumgart/ISG-ML-Comp-WiSe23-Lib.git

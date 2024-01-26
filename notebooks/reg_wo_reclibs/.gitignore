@@ -1,0 +1,2 @@
+# Ignore catboost output/data directory
+catboost_info/

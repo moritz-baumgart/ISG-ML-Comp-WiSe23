@@ -1,0 +1,7 @@
+# Ignore log, tensorboard log and saved models
+log/
+log_tensorboard/
+saved/
+
+# ignore interaction files, they can be generated again using data_prep.ipynb
+datasets/

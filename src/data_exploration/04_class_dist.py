@@ -7,6 +7,8 @@ def main():
 
     df = df[['feature_10', 'feature_12', 'feature_20', 'label']]
 
+    print(df['label'].value_counts())
+
     def make(index, ft_name, ft_values, ax):
         categories = ft_values.value_counts()
         ax.bar(categories.index.map(lambda x: str(x)), categories.values)

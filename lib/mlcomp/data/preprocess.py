@@ -36,7 +36,7 @@ def remove_outliers(
             cap_min = df_without_outliers[c].min()
             cap_max = df_without_outliers[c].max()
             clipped = df[c].clip(lower=cap_min, upper=cap_max)
-            df_result[c].loc[mask == -1] = clipped 
+            df_result.loc[mask == -1, c] = clipped 
 
         return df_result
     else:
