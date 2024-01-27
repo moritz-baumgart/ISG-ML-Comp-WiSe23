@@ -3,6 +3,11 @@ from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import scale
 from pandas import DataFrame
 
+"""
+This file contains some basic preprocessing (outlier removal using isolation forest and normalization).
+Besides that I used it for loading the classification data.
+"""
+
 
 def load_data():
     return load_X_y('../data/classification/train_features.csv', '../data/classification/train_label.csv')

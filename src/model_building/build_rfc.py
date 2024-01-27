@@ -6,6 +6,11 @@ from joblib import dump
 from preprocess.preprocess import i_forest
 
 
+"""
+This file trains and evaluates a RandomForestClassifier on the classification dataset for a few different hyperparameters.
+"""
+
+
 X, y = i_forest()
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.8, random_state=42)

@@ -2,6 +2,9 @@ import pandas as pd
 from pandas import DataFrame
 import pathlib
 
+"""
+This file loads data from a CSV file. I used it inside "preprocess.py"
+"""
 
 def load_X_y(trainft, trainlabel):
 

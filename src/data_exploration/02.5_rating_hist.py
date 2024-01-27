@@ -3,6 +3,11 @@ import matplotlib.pyplot as plt
 from load import get_reg_train_data
 
 
+"""
+This file creates and shows a diagram with the distribution of rating in the regression task.
+"""
+
+
 def main():
     df = get_reg_train_data()
 

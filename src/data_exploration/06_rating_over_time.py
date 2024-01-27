@@ -4,6 +4,11 @@ import pandas as pd
 from load import get_reg_train_data
 
 
+"""
+This file creates and shows the rating of the regression task over time. It bins them in 5 day large bins and takes the mean rating for each bin.
+"""
+
+
 def main():
     df = get_reg_train_data()
 

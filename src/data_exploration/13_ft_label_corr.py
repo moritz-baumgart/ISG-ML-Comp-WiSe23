@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 
 from load import get_class_train_data
 
+"""
+This file was a test that I discontinued. You can ignore it.
+"""
 
 def main():
     df = get_class_train_data()

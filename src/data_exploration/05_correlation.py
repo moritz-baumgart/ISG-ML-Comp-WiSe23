@@ -4,6 +4,11 @@ import numpy as np
 from load import get_class_train_data
 
 
+"""
+This file creates a correlation matrix for the features of the classification task and saves it to "corr_matrix.pdf".
+"""
+
+
 def main():
     df = get_class_train_data()
     df.drop(columns='Id', inplace=True)

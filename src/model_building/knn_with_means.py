@@ -4,6 +4,12 @@ from surprise.accuracy import rmse
 
 import pandas as pd
 
+"""
+In this file I played around a bit with the surprise library and tried to 
+train and evaluate the KNNWithMeans algorithm for the regression dataset.
+"""
+
+
 def main():
     X = pd.read_csv('../data/regression/train_features.csv')
     y = pd.read_csv('../data/regression/train_label.csv')
@@ -34,7 +40,6 @@ def main():
     prediction = algo.test(testset)
 
     print(prediction)
-    return
 
     print(rmse(prediction))
 

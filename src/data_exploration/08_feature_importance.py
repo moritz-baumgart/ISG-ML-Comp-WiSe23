@@ -3,6 +3,11 @@ from sklearn.tree import DecisionTreeClassifier
 import matplotlib.pyplot as plt
 
 
+"""
+This file creates and shows the feature importance of each feature from the classification task given by a DecisionTreeClassifier.
+"""
+
+
 def main():
     X, y = get_class_train_data(split_label=True)
 

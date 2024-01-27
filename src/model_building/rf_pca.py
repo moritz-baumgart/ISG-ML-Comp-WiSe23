@@ -8,6 +8,11 @@ from sklearn.metrics import f1_score
 
 from load import get_class_train_data
 
+"""
+In this file I trained and evaluated a random forest using PCs as features. I tried different numbers of PC and estimators for the RF.
+Before that there is also some preprocessing (dropping outliers using isolation forest, scaling)
+"""
+
 
 def main():
     X_df, y_df = get_class_train_data(split_label=True)

@@ -9,6 +9,12 @@ import numpy as np
 from load import get_class_train_data
 
 
+"""
+This file calculates the first 3 PC for the classification training set.
+It displays the scree plot as well as the PCs in 3d space where it also colors the instances by class.
+"""
+
+
 def main():
     X_df, y_df = get_class_train_data(split_label=True)
 

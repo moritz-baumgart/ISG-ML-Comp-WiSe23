@@ -2,6 +2,11 @@ from load import get_class_train_data
 from util import make_diagram_foreach
 
 
+"""
+This file creates and shows a diagram with the class distributions of the categorical features/the label of the classification task.
+"""
+
+
 def main():
     df = get_class_train_data()
 

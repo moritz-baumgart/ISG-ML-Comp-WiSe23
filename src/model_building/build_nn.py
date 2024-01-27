@@ -7,6 +7,12 @@ from sklearn.metrics import accuracy_score, f1_score
 from keras.src.callbacks import History
 from joblib import dump
 
+"""
+In this file I played around a bit with keras/tensorflow and tried to build and evaluate a simple neural network
+on the classification dataset and see how it behaves with different parameters.
+"""
+
+
 ### PARAMS
 random_state=42
 train_size=0.8

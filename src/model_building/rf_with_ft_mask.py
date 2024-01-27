@@ -5,6 +5,11 @@ import joblib
 
 from preprocess import preprocess
 
+"""
+In this file I used the feature mask obtained using recursive feature elimination to train a random forest
+and see which impact removing the features has on the score.
+"""
+
 def test_model(X, y):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1337)
 

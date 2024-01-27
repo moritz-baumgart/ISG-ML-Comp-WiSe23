@@ -1,6 +1,11 @@
 import pandas as pd
 
 
+"""
+This file is used for loading the data from the CSV files.
+"""
+
+
 def get_train_data(ft_file: str, label_file: str, label_name: str, split_label=False):
     train_ft = pd.read_csv(ft_file)
     train_label = pd.read_csv(label_file)

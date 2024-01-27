@@ -8,6 +8,10 @@ from sklearn.metrics import f1_score
 
 from load import get_class_train_data
 
+"""
+In this file I used grid search and tried to increase the performance of a random forest.
+"""
+
 
 def main():
     X_df, y_df = get_class_train_data(split_label=True)

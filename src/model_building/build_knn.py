@@ -7,8 +7,13 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import f1_score
 from sklearn.preprocessing import scale
 from sklearn.ensemble import IsolationForest
-from joblib import dump
 import matplotlib.pyplot as plt
+
+
+"""
+This file load the classification dataset, drops ft2, removes outliers using IsolationForest and scales the data using StandardScaler.
+It does a train test split, find the best k for kNN using grid search, plots the results for the different Ks and prints the test end result.
+"""
 
 
 train_ft = pd.read_csv('../data/classification/train_features.csv')

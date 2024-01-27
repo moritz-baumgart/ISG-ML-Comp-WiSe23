@@ -8,9 +8,12 @@ from sklearn.preprocessing import scale
 
 from load import get_class_train_data
 
+"""
+This file prints PCA loadings for each feature and the first 2 PC.
+"""
+
 def main():
 
-    # load iris dataset
     df = get_class_train_data()
     df.drop(columns=['Id', 'feature_2'], inplace=True)
 

@@ -5,6 +5,11 @@ from sklearn.feature_selection import RFECV
 
 from preprocess import preprocess
 
+"""
+In this file I originally planned to select features using recursive feature elimination and then train a
+random forest based on that, instead I used the resulting feature mask elsewhere.
+"""
+
 
 def main():
     X, y = preprocess.load_data()

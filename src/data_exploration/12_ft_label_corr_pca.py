@@ -8,6 +8,14 @@ import seaborn as sns
 from load import get_class_train_data
 
 
+"""
+This file plots the first 5 PC for the classification task.
+It creates such a plot for all the features with one features being left out.
+The idea was to see if we get better PCs when we drop certain features.
+The results is saved as "drop_feature_<FEATURE_NR>.png" inside the "drops" folder.
+"""
+
+
 def do(remove_ft_name: str):
     X_df, y_df = get_class_train_data(split_label=True)
     print(f'Dropping {remove_ft_name}...')

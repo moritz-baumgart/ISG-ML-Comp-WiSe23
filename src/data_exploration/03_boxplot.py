@@ -2,6 +2,10 @@ from load import get_class_train_data
 from util import make_diagram_foreach
 
 
+"""
+This file creates boxplots for all features/the label of the classification tasks and saves them in "boxplot.pdf".
+"""
+
 def main():
     df = get_class_train_data()
     df.drop(columns='Id', inplace=True)

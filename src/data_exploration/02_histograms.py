@@ -4,6 +4,12 @@ from matplotlib.axes import Axes
 from load import get_class_train_data
 from util import make_diagram_foreach
 
+"""
+This file created histograms for all features and the label of the classification task and saves them to a files called "hist.pdf".
+After the data engeering milestone I added a mask which colors the histograms based on the result of recursive feature elemination.
+You can decide below if outliers should be removed before creating the histograms.
+"""
+
 ####################
 REMOVE_OUTLIERS=True
 ####################

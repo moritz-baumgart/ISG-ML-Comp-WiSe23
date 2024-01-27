@@ -6,6 +6,10 @@ import matplotlib.pyplot as plt
 
 from load import get_class_train_data
 
+"""
+This file preforms TSNE for the classification task and displays the results while coloring the instances by class.
+"""
+
 
 def main():
     X_df, y_df = get_class_train_data(split_label=True)

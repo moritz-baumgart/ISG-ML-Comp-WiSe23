@@ -1,6 +1,14 @@
 from load import get_class_train_data, get_reg_train_data
 import pandas as pd
 
+"""
+This file prints some basic statistics/values about the data (pandas describe, unique values and
+datatype of columns, number of duplicate rows, number of NaNs).
+
+It stops after each step and waits for you to press enter to continue.
+"""
+
+
 def main():
     class_df = get_class_train_data()
     print('####################\nClassification Task:\n####################')
